@@ -1,0 +1,139 @@
+/*! ************** Global Style ************** */
+:root {
+  --main-color: #7f2fc5;
+}
+
+body {
+  font-family: "Exo 2", serif;
+  background: linear-gradient(to bottom, rgb(197, 167, 222), rgb(188, 137, 210), #471f5e);
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+}
+/*! ************** Global Style ************** */
+
+
+/*? ************** Start Section ************** */
+#progressBar {
+  height: 10px;
+  background-color: #9261f588;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#progressBar #progress {
+  height: inherit;
+  background-color: var(--main-color);
+  width: 0%;
+  transition: width 0.7s;
+}
+
+.status-number {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #dcdada;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.custom-input:focus {
+  box-shadow: 0 0 0 3px #9261f57f;
+}
+
+.add-task {
+  background-color: var(--main-color);
+  padding: 10px 35px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.task-container .icon {
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.task-container .task-name {
+  cursor: pointer;
+  position: relative;
+}
+
+.task-container .task-name::after {
+  content: "click to completed";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #817d81;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 8px;
+  text-wrap: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.task-container .task-name:hover::after {
+  opacity: 1;
+}
+/*? ************** End Section ************** */
+
+
+/*? ************** Start Loader ************** */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #e100ff transparent;
+}
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0 0 0 / 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+/*? ************** End Loader ************** */
+
+
+
+
+
